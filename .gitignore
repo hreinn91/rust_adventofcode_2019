@@ -5,4 +5,5 @@
 
 /target
 src/day1/target/
+src/*/target/
 Cargo.lock
