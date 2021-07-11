@@ -4,5 +4,5 @@
 
 
 /target
-
+src/day1/target/
 Cargo.lock
