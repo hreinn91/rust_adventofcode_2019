@@ -1,6 +1,7 @@
 #[cfg(test)]
 mod tests {
-    use crate::day3::{get_input, parse, get_grid};
+    use crate::day3::{get_input, parse, get_grid, print_grid, get_grid_size};
+    use std::collections::HashMap;
 
     #[test]
     fn input_test() {
@@ -13,7 +14,6 @@ mod tests {
     fn parse_test() {
         let wires = get_input("src/test_input1.txt");
         let wire_1 = wires.0;
-        let wire_2 = wires.1;
         let parse1 = parse(wire_1[0].to_string());
         assert_eq!(parse1.0, "R");
         assert_eq!(parse1.1, 8);
@@ -24,5 +24,10 @@ mod tests {
         let wires = get_input("src/test_input1.txt");
         let grid = get_grid(wires);
         assert_eq!(grid.keys().len(), 41);
+
+        let grid_size = get_grid_size(grid.clone());
+        assert_eq!(grid_size.0, 8);
+        assert_eq!(grid_size.1, 7);
+        print_grid(grid.clone());
     }
 }
